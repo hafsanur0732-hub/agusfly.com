@@ -1,28 +1,36 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>AGUSFLY | At Bakım Ürünleri</title>
+  <meta name="description" content="AGUSFLY: Profesyonel at bakım ürünleri. Fly spray, hoof balm ve tail spray." />
+  <meta name="theme-color" content="#0b0f14" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AGUSFLY | At Bakım Ürünleri" />
+  <meta property="og:description" content="Profesyonel at bakım çözümleri: Koruma, tırnak bakımı, yele & kuyruk bakımı." />
+  <meta property="og:type" content="website" />
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- Header -->
   <header class="header">
     <div class="container header__inner">
-      <a class="logo" href="#anasayfa">AGUSFLY</a>
+      <a class="logo" href="#anasayfa" aria-label="Ana sayfa">AGUSFLY</a>
 
       <nav class="nav" id="nav">
         <a href="#anasayfa">Ana Sayfa</a>
         <a href="#hakkimizda">Hakkımızda</a>
         <a href="#urunler">Ürünler</a>
+        <a href="#sss">SSS</a>
         <a href="#iletisim">İletişim</a>
       </nav>
 
-      <button class="menuBtn" id="menuBtn" aria-label="Menüyü aç/kapat">
-        ☰
-      </button>
+      <button class="menuBtn" id="menuBtn" aria-label="Menüyü aç/kapat">☰</button>
     </div>
   </header>
 
@@ -30,24 +38,43 @@
   <section id="anasayfa" class="hero">
     <div class="container hero__inner">
       <div class="hero__text">
-        <h1>Profesyonel At Bakım Çözümleri</h1>
+        <div class="pill">🐴 Profesyonel At Bakım Çözümleri</div>
+        <h1>Atınızın konforu için pratik ve etkili bakım</h1>
         <p>
-          Kaliteli içerik, pratik kullanım ve modern tasarım.
-          Atınızın konforu için özel geliştirilmiş ürünler.
+          AGUSFLY ile günlük bakım daha kolay:
+          sinek/haşere koruması, tırnak bakımı ve yele-kuyruk desteği.
         </p>
+
         <div class="hero__cta">
           <a class="btn" href="#urunler">Ürünleri Gör</a>
           <a class="btn btn--ghost" href="#iletisim">Teklif Al</a>
         </div>
+
+        <div class="badges">
+          <span>✅ Mobil uyumlu</span>
+          <span>✅ Hızlı yüklenir</span>
+          <span>✅ Modern tasarım</span>
+        </div>
       </div>
 
       <div class="hero__card">
-        <h3>Öne Çıkan</h3>
+        <h3>Öne Çıkanlar</h3>
         <ul>
-          <li>✅ Sinek & haşere koruması</li>
-          <li>✅ Tırnak bakım desteği</li>
-          <li>✅ Kuyruk & yele kolay tarama</li>
+          <li><strong>Koruma:</strong> Sinek & haşerelere karşı destek</li>
+          <li><strong>Bakım:</strong> Tırnak nem dengesine yardımcı</li>
+          <li><strong>Kolay tarama:</strong> Yele & kuyruk dolaşıklığını azaltır</li>
         </ul>
+
+        <div class="hero__mini">
+          <div class="miniCard">
+            <div class="miniCard__title">Hızlı Sipariş</div>
+            <div class="miniCard__text">WhatsApp üzerinden ulaş</div>
+          </div>
+          <div class="miniCard">
+            <div class="miniCard__title">Destek</div>
+            <div class="miniCard__text">Kullanım önerileri</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -58,23 +85,23 @@
       <div class="section__head">
         <h2>Hakkımızda</h2>
         <p>
-          AGUSFLY, at bakımı için pratik ve etkili ürünler geliştirmeyi hedefler.
-          Amacımız; performans, güvenilirlik ve kullanıcı deneyimini bir araya getirmek.
+          AGUSFLY, at bakım rutininizi daha pratik hale getirmek için
+          geliştirilmiş ürünler sunar.
         </p>
       </div>
 
       <div class="grid3">
         <div class="card">
           <h3>Kalite</h3>
-          <p>Seçili içerikler ve düzenli üretim standardı.</p>
+          <p>Seçili içerikler ve güvenilir üretim yaklaşımı.</p>
         </div>
         <div class="card">
           <h3>Pratik Kullanım</h3>
-          <p>Günlük bakım rutinine uyumlu formüller.</p>
+          <p>Günlük kullanım için kolay uygulama.</p>
         </div>
         <div class="card">
-          <h3>Modern Tasarım</h3>
-          <p>Temiz arayüz, hızlı erişim, mobil uyum.</p>
+          <h3>Modern Deneyim</h3>
+          <p>Temiz tasarım, net ürün sunumu, hızlı erişim.</p>
         </div>
       </div>
     </div>
@@ -85,61 +112,125 @@
     <div class="container">
       <div class="section__head">
         <h2>Ürünler</h2>
-        <p>En çok tercih edilen bakım ürünlerimiz.</p>
+        <p>Ürün detayına tıklayıp kullanım bilgisini görebilirsin.</p>
       </div>
 
       <div class="products">
         <article class="product">
-          <div class="product__badge">Koruma</div>
+          <div class="product__top">
+            <div class="product__badge">Koruma</div>
+            <div class="product__price">₺ —</div>
+          </div>
           <h3>Horse Fly Spray</h3>
-          <p>Sinek ve haşerelere karşı etkili koruma sağlar.</p>
-          <button class="btn btn--small" data-product="Horse Fly Spray">Detay</button>
+          <p>Sinek ve haşerelere karşı etkili koruma desteği.</p>
+          <div class="product__actions">
+            <button class="btn btn--small" data-product="Horse Fly Spray">Detay</button>
+            <a class="btn btn--small btn--ghost" href="#iletisim">İletişim</a>
+          </div>
         </article>
 
         <article class="product">
-          <div class="product__badge">Bakım</div>
+          <div class="product__top">
+            <div class="product__badge">Bakım</div>
+            <div class="product__price">₺ —</div>
+          </div>
           <h3>Horse Hoof Balm</h3>
-          <p>At tırnak bakımı için besleyici ve koruyucu balm.</p>
-          <button class="btn btn--small" data-product="Horse Hoof Balm">Detay</button>
+          <p>Tırnak bakımı için besleyici ve koruyucu balm.</p>
+          <div class="product__actions">
+            <button class="btn btn--small" data-product="Horse Hoof Balm">Detay</button>
+            <a class="btn btn--small btn--ghost" href="#iletisim">İletişim</a>
+          </div>
         </article>
 
         <article class="product">
-          <div class="product__badge">Yele/Kuyruk</div>
+          <div class="product__top">
+            <div class="product__badge">Yele/Kuyruk</div>
+            <div class="product__price">₺ —</div>
+          </div>
           <h3>Horse Tail Spray</h3>
           <p>Kuyruk ve yele bakımında taramayı kolaylaştırır.</p>
-          <button class="btn btn--small" data-product="Horse Tail Spray">Detay</button>
+          <div class="product__actions">
+            <button class="btn btn--small" data-product="Horse Tail Spray">Detay</button>
+            <a class="btn btn--small btn--ghost" href="#iletisim">İletişim</a>
+          </div>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section id="sss" class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>SSS</h2>
+        <p>Sık sorulan soruların hızlı cevapları.</p>
+      </div>
+
+      <div class="faq">
+        <details class="faq__item">
+          <summary>Ürünler nasıl kullanılır?</summary>
+          <p>Ürün kartındaki “Detay” butonundan kullanım önerisini görebilirsin.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Ne kadar sıklıkla uygulanmalı?</summary>
+          <p>İhtiyaca göre değişir. Fly spray için ortam koşullarına göre tekrar uygulanabilir.</p>
+        </details>
+        <details class="faq__item">
+          <summary>Sipariş için en hızlı yol?</summary>
+          <p>Sağ alttaki WhatsApp butonu ile direkt yazabilirsin.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact -->
-  <section id="iletisim" class="section">
+  <section id="iletisim" class="section section--alt">
     <div class="container">
       <div class="section__head">
         <h2>İletişim</h2>
-        <p>Mesaj bırakın, en kısa sürede dönüş yapalım.</p>
+        <p>Formu doldur — mesajın ekranda “gönderildi” diye görünecek (demo). İstersen gerçek e-posta entegrasyonu da eklerim.</p>
       </div>
 
-      <form class="form" id="contactForm">
-        <div class="form__row">
-          <label>Ad Soyad</label>
-          <input required type="text" name="name" placeholder="Adınız Soyadınız" />
-        </div>
+      <div class="contactGrid">
+        <form class="form" id="contactForm">
+          <div class="form__row">
+            <label>Ad Soyad</label>
+            <input required type="text" name="name" placeholder="Adınız Soyadınız" />
+          </div>
 
-        <div class="form__row">
-          <label>E-posta</label>
-          <input required type="email" name="email" placeholder="ornek@mail.com" />
-        </div>
+          <div class="form__row">
+            <label>E-posta</label>
+            <input required type="email" name="email" placeholder="ornek@mail.com" />
+          </div>
 
-        <div class="form__row">
-          <label>Mesaj</label>
-          <textarea required name="message" rows="5" placeholder="Mesajınız..."></textarea>
-        </div>
+          <div class="form__row">
+            <label>Telefon (opsiyonel)</label>
+            <input type="tel" name="phone" placeholder="+90..." />
+          </div>
 
-        <button class="btn" type="submit">Gönder</button>
-        <p class="form__note" id="formNote"></p>
-      </form>
+          <div class="form__row">
+            <label>Mesaj</label>
+            <textarea required name="message" rows="5" placeholder="Mesajınız..."></textarea>
+          </div>
+
+          <button class="btn" type="submit">Gönder</button>
+          <p class="form__note" id="formNote"></p>
+        </form>
+
+        <div class="contactCard">
+          <h3>Hızlı İletişim</h3>
+          <p class="muted">WhatsApp ile hızlıca ulaş.</p>
+
+          <a class="btn" id="waLink" href="#" target="_blank" rel="noopener">WhatsApp’tan Yaz</a>
+
+          <div class="divider"></div>
+
+          <div class="muted small">
+            <div><strong>Çalışma Saatleri:</strong> 09:00–18:00</div>
+            <div><strong>Konum:</strong> Türkiye</div>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -150,6 +241,11 @@
       <a href="#anasayfa">Yukarı çık ↑</a>
     </div>
   </footer>
+
+  <!-- WhatsApp Floating Button -->
+  <a class="waFloat" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp ile yaz">
+    💬
+  </a>
 
   <!-- Modal -->
   <div class="modal" id="modal" aria-hidden="true">
