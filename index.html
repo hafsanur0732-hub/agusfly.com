@@ -1,11 +1,94 @@
 <!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8">
-  <title>AGUSFLY</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AGUSFLY | Horse & Equipment</title>
+  <meta name="description" content="AGUSFLY: At bakım ve ekipman ürünleri. Modern, profesyonel ve güvenilir çözümler." />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>AGUSFLY</h1>
-  <p>Site yayında 🚀</p>
+
+<header class="topbar">
+  <div class="container nav">
+    <div class="brand">
+      <div class="brand-mark"></div>
+      <div>
+        <h1>AGUSFLY</h1>
+        <small>Horse & Equipment</small>
+      </div>
+    </div>
+
+    <nav class="menu">
+      <a href="#">Anasayfa</a>
+      <a href="#urunler">Ürünler</a>
+      <a href="#neden">Neden Biz?</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <h2>At bakımında profesyonel çözümler</h2>
+    <p>
+      AGUSFLY; sinek kovucu sprey, tırnak bakım balmı ve kuyruk bakım ürünleriyle
+      günlük bakım rutininizi kolaylaştırır.
+    </p>
+    <a class="btn" href="#urunler">Ürünleri İncele</a>
+  </section>
+
+  <section id="urunler" class="section">
+    <h3>Ürünlerimiz</h3>
+
+    <div class="grid">
+      <div class="card">
+        <img src="images/product-fly-spray.png" alt="Horse Fly Spray">
+        <h4>Horse Fly Spray</h4>
+        <p>Sinek ve haşereye karşı etkili koruma.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/product-hoof-balm.png" alt="Horse Hoof Balm">
+        <h4>Horse Hoof Balm</h4>
+        <p>Tırnak bakımında besleyici destek.</p>
+      </div>
+
+      <div class="card">
+        <img src="images/product-tail-spray.png" alt="Horse Tail Spray">
+        <h4>Horse Tail Spray</h4>
+        <p>Kuyruk ve yele için kolay tarama.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="neden" class="section">
+    <h3>Neden AGUSFLY?</h3>
+    <ul>
+      <li>✔️ Güvenilir kalite</li>
+      <li>✔️ Pratik kullanım</li>
+      <li>✔️ Modern tasarım</li>
+      <li>✔️ Kurumsal yaklaşım</li>
+    </ul>
+  </section>
+
+  <section id="iletisim" class="section">
+    <h3>İletişim</h3>
+    <p>Teklif ve iş birlikleri için bize ulaşın.</p>
+    <p><b>E-posta:</b> info@agusfly.com</p>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p>© <span id="y"></span> AGUSFLY — Horse & Equipment</p>
+</footer>
+
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+</script>
+<script src="script.js"></script>
+
 </body>
 </html>
