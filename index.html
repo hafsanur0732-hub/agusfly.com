@@ -1,262 +1,640 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AGUSFLY | Professional Horse Care</title>
 
-  <title>AGUSFLY | At Bakım Ürünleri</title>
-  <meta name="description" content="AGUSFLY: Profesyonel at bakım ürünleri. Fly spray, hoof balm ve tail spray." />
-  <meta name="theme-color" content="#0b0f14" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="AGUSFLY | At Bakım Ürünleri" />
-  <meta property="og:description" content="Profesyonel at bakım çözümleri: Koruma, tırnak bakımı, yele & kuyruk bakımı." />
-  <meta property="og:type" content="website" />
+  <style>
+    :root{
+      --black:#111111;
+      --gold:#C9A46A;
+      --bg:#F7F7F7;
+      --muted:#777;
+      --card:#ffffff;
+      --line:#e9e9e9;
+      --radius:18px;
+      --shadow: 0 18px 45px rgba(0,0,0,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--black); background:var(--bg);
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{width:min(1120px, 92%); margin:auto}
 
-  <link rel="stylesheet" href="style.css" />
+    /* Topbar */
+    .topbar{
+      background:var(--black); color:#fff; font-size:13px;
+      padding:10px 0;
+    }
+    .topbar .wrap{display:flex; justify-content:space-between; gap:12px; align-items:center}
+    .badge{
+      display:inline-flex; gap:8px; align-items:center;
+      border:1px solid rgba(255,255,255,.2);
+      padding:6px 10px; border-radius:999px;
+    }
+    .badge i{width:8px; height:8px; background:var(--gold); border-radius:50%}
+
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:10;
+      background:rgba(247,247,247,.85);
+      backdrop-filter: blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:16px 0; gap:16px;
+    }
+    .logo{
+      font-family:"Playfair Display", serif;
+      letter-spacing:3px;
+      font-size:22px;
+      display:flex; align-items:center; gap:10px;
+    }
+    .logo-mark{
+      width:34px; height:34px; border-radius:12px;
+      background:linear-gradient(135deg, var(--black), #2a2a2a);
+      position:relative;
+      box-shadow: 0 12px 25px rgba(0,0,0,.12);
+    }
+    .logo-mark:after{
+      content:""; position:absolute; inset:8px;
+      border:1px solid rgba(201,164,106,.8);
+      border-radius:10px;
+    }
+
+    .menu{display:flex; gap:18px; align-items:center}
+    .menu a{
+      font-size:14px; color:#1c1c1c;
+      opacity:.9; padding:8px 10px; border-radius:10px;
+    }
+    .menu a:hover{background:#fff; box-shadow:0 10px 25px rgba(0,0,0,.06)}
+    .actions{display:flex; gap:10px; align-items:center}
+    .icon-btn{
+      width:38px; height:38px; display:grid; place-items:center;
+      border:1px solid var(--line); border-radius:12px; background:#fff;
+    }
+    .icon-btn:hover{border-color:#ddd; box-shadow:0 10px 25px rgba(0,0,0,.06)}
+    .hamburger{display:none}
+
+    /* Hero */
+    .hero{padding:42px 0 18px}
+    .hero-grid{
+      display:grid; grid-template-columns: 1.2fr .8fr; gap:18px;
+      align-items:stretch;
+    }
+    .hero-main{
+      border-radius:var(--radius);
+      background:linear-gradient(135deg, #ffffff, #f3f1ee);
+      border:1px solid var(--line);
+      overflow:hidden;
+      position:relative;
+      padding:34px;
+      box-shadow: var(--shadow);
+      min-height: 320px;
+    }
+    .hero-main:before{
+      content:""; position:absolute; right:-120px; top:-120px;
+      width:320px; height:320px; border-radius:50%;
+      background: radial-gradient(circle, rgba(201,164,106,.35), transparent 60%);
+    }
+    .kicker{
+      display:inline-flex; gap:10px; align-items:center;
+      color:var(--muted); font-size:13px;
+      border:1px solid var(--line); background:#fff;
+      padding:8px 12px; border-radius:999px;
+    }
+    .kicker span{
+      width:10px; height:10px; border-radius:50%;
+      background:var(--gold);
+      box-shadow:0 0 0 6px rgba(201,164,106,.18);
+    }
+    h1{
+      font-family:"Playfair Display", serif;
+      font-size:44px; line-height:1.05; margin:16px 0 10px;
+    }
+    .lead{color:#333; max-width:56ch; margin:0 0 22px; opacity:.85}
+    .btn-row{display:flex; gap:12px; flex-wrap:wrap}
+    .btn{
+      border:none; cursor:pointer;
+      padding:12px 18px; border-radius:14px;
+      font-weight:600; font-size:14px;
+      display:inline-flex; gap:10px; align-items:center;
+    }
+    .btn-primary{background:var(--black); color:#fff}
+    .btn-primary:hover{background:#000}
+    .btn-ghost{
+      background:#fff; border:1px solid var(--line);
+    }
+    .btn-ghost:hover{border-color:#ddd}
+    .stats{display:flex; gap:16px; margin-top:18px; flex-wrap:wrap}
+    .stat{
+      background:#fff; border:1px solid var(--line);
+      padding:12px 14px; border-radius:14px;
+      min-width:160px;
+    }
+    .stat b{display:block; font-size:16px}
+    .stat small{color:var(--muted)}
+
+    .hero-side{
+      display:grid; gap:18px;
+    }
+    .side-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 10px 26px rgba(0,0,0,.05);
+      display:flex; gap:14px;
+      align-items:center;
+    }
+    .side-icon{
+      width:44px; height:44px; border-radius:14px;
+      border:1px solid rgba(201,164,106,.55);
+      background:linear-gradient(135deg, #fff, #faf7f2);
+      display:grid; place-items:center;
+      font-weight:700;
+      color:var(--black);
+    }
+    .side-card p{margin:0; color:var(--muted); font-size:13px}
+    .side-card h3{margin:0 0 4px; font-size:15px}
+
+    /* Sections */
+    section{padding:22px 0}
+    .section-head{
+      display:flex; align-items:end; justify-content:space-between; gap:12px;
+      margin-bottom:12px;
+    }
+    .section-head h2{
+      font-family:"Playfair Display", serif;
+      margin:0; font-size:28px;
+    }
+    .section-head .hint{color:var(--muted); font-size:14px}
+
+    /* Category grid */
+    .grid-4{
+      display:grid; grid-template-columns: repeat(4, 1fr); gap:14px;
+    }
+    .cat{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:16px;
+      transition:.25s;
+    }
+    .cat:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
+    .cat .tag{
+      display:inline-block; font-size:12px; color:var(--muted);
+      border:1px solid var(--line);
+      padding:6px 10px; border-radius:999px;
+      background:#fff;
+    }
+    .cat h3{margin:12px 0 6px; font-size:16px}
+    .cat p{margin:0; color:var(--muted); font-size:13px}
+
+    /* Product grid */
+    .grid-3{
+      display:grid; grid-template-columns: repeat(3, 1fr); gap:14px;
+    }
+    .product{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      transition:.25s;
+      position:relative;
+    }
+    .product:hover{transform:translateY(-4px); box-shadow:var(--shadow)}
+    .p-img{
+      background:linear-gradient(135deg, #fff, #f5f2ee);
+      padding:18px;
+      aspect-ratio: 4/3;
+      display:grid; place-items:center;
+    }
+    .p-img img{
+      max-height: 190px; width:auto;
+      filter: drop-shadow(0 18px 25px rgba(0,0,0,.18));
+    }
+    .p-body{padding:16px}
+    .p-title{margin:0 0 6px; font-size:16px}
+    .p-meta{margin:0; color:var(--muted); font-size:13px}
+    .p-row{
+      display:flex; justify-content:space-between; align-items:center;
+      margin-top:12px; gap:10px;
+    }
+    .pill{
+      font-size:12px;
+      border:1px solid rgba(201,164,106,.55);
+      background:rgba(201,164,106,.12);
+      padding:6px 10px; border-radius:999px;
+    }
+    .link{
+      font-weight:600; font-size:14px;
+      display:inline-flex; gap:8px; align-items:center;
+    }
+    .link:hover{color:#000; text-decoration:underline}
+    .promo{
+      position:absolute; top:14px; left:14px;
+      background:var(--black); color:#fff;
+      padding:6px 10px; border-radius:999px; font-size:12px;
+      border:1px solid rgba(255,255,255,.18);
+    }
+
+    /* Banner */
+    .banner{
+      border-radius:var(--radius);
+      background:linear-gradient(135deg, var(--black), #252525);
+      color:#fff;
+      padding:22px;
+      border:1px solid rgba(255,255,255,.08);
+      display:flex; justify-content:space-between; gap:18px; align-items:center;
+      box-shadow: var(--shadow);
+    }
+    .banner h3{margin:0 0 6px; font-family:"Playfair Display", serif; font-size:22px}
+    .banner p{margin:0; color:rgba(255,255,255,.78)}
+    .banner .btn-primary{background:var(--gold); color:#111}
+    .banner .btn-primary:hover{filter:brightness(.95)}
+
+    /* About + cards */
+    .grid-2{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    .box{
+      background:var(--card); border:1px solid var(--line);
+      border-radius:var(--radius); padding:18px;
+    }
+    .box h3{margin:0 0 10px}
+    .box p{margin:0; color:var(--muted); line-height:1.6}
+
+    /* Newsletter */
+    .newsletter{
+      background: #fff;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+      display:flex; gap:12px; align-items:center; justify-content:space-between;
+    }
+    .newsletter form{display:flex; gap:10px; width:min(520px, 100%)}
+    input{
+      flex:1;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      outline:none;
+    }
+    input:focus{border-color:#d8c5a4; box-shadow:0 0 0 4px rgba(201,164,106,.18)}
+    .toast{
+      display:none;
+      margin-top:10px;
+      color:#0b6b2b;
+      font-size:13px;
+    }
+
+    /* Footer */
+    footer{
+      margin-top:24px;
+      background:#fff;
+      border-top:1px solid var(--line);
+      padding:22px 0;
+    }
+    .foot{
+      display:grid; grid-template-columns: 1.2fr .8fr .8fr .8fr; gap:14px;
+    }
+    .foot h4{margin:0 0 10px}
+    .foot a{display:block; color:var(--muted); padding:6px 0; font-size:14px}
+    .copy{color:var(--muted); font-size:13px; margin-top:12px}
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-grid{grid-template-columns: 1fr}
+      .grid-4{grid-template-columns: repeat(2,1fr)}
+      .grid-3{grid-template-columns: repeat(2,1fr)}
+      .foot{grid-template-columns: repeat(2,1fr)}
+      .menu{display:none}
+      .hamburger{display:grid}
+    }
+    @media (max-width: 560px){
+      h1{font-size:34px}
+      .grid-4, .grid-3{grid-template-columns: 1fr}
+      .newsletter{flex-direction:column; align-items:stretch}
+      .newsletter form{width:100%}
+      .stats .stat{min-width:unset; flex:1}
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- Header -->
-  <header class="header">
-    <div class="container header__inner">
-      <a class="logo" href="#anasayfa" aria-label="Ana sayfa">AGUSFLY</a>
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="container wrap">
+      <div class="badge"><i></i> Professional Horse Care • Premium Formula</div>
+      <div style="opacity:.85">Distribütörlük: info@agusfly.com</div>
+    </div>
+  </div>
 
-      <nav class="nav" id="nav">
-        <a href="#anasayfa">Ana Sayfa</a>
-        <a href="#hakkimizda">Hakkımızda</a>
-        <a href="#urunler">Ürünler</a>
-        <a href="#sss">SSS</a>
-        <a href="#iletisim">İletişim</a>
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#">
+        <span class="logo-mark"></span>
+        AGUSFLY
+      </a>
+
+      <nav class="menu">
+        <a href="#categories">Kategoriler</a>
+        <a href="#products">Ürünler</a>
+        <a href="#about">Hakkımızda</a>
+        <a href="#contact">İletişim</a>
       </nav>
 
-      <button class="menuBtn" id="menuBtn" aria-label="Menüyü aç/kapat">☰</button>
+      <div class="actions">
+        <a class="icon-btn" href="#" title="Ara">🔎</a>
+        <a class="icon-btn" href="#" title="Favoriler">♡</a>
+        <a class="icon-btn" href="#" title="Sepet">🛒</a>
+        <button class="icon-btn hamburger" id="menuBtn" title="Menü">☰</button>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section id="anasayfa" class="hero">
-    <div class="container hero__inner">
-      <div class="hero__text">
-        <div class="pill">🐴 Profesyonel At Bakım Çözümleri</div>
-        <h1>Atınızın konforu için pratik ve etkili bakım</h1>
-        <p>
-          AGUSFLY ile günlük bakım daha kolay:
-          sinek/haşere koruması, tırnak bakımı ve yele-kuyruk desteği.
+  <div class="hero">
+    <div class="container hero-grid">
+      <div class="hero-main">
+        <div class="kicker"><span></span> At bakımında profesyonel çözüm</div>
+        <h1>Güçlü Koruma, <br>Temiz Bakım.</h1>
+        <p class="lead">
+          Agusfly; fly & pest kontrol, tail care ve hoof bakım ürünleriyle
+          ahır ve binicilik rutinini profesyonel seviyeye taşır.
         </p>
 
-        <div class="hero__cta">
-          <a class="btn" href="#urunler">Ürünleri Gör</a>
-          <a class="btn btn--ghost" href="#iletisim">Teklif Al</a>
+        <div class="btn-row">
+          <button class="btn btn-primary" onclick="document.querySelector('#products').scrollIntoView({behavior:'smooth'})">
+            Ürünleri İncele →
+          </button>
+          <button class="btn btn-ghost" onclick="alert('Katalog linkini buraya ekleyebilirsin (PDF)')">
+            Kataloğu İndir
+          </button>
         </div>
 
-        <div class="badges">
-          <span>✅ Mobil uyumlu</span>
-          <span>✅ Hızlı yüklenir</span>
-          <span>✅ Modern tasarım</span>
+        <div class="stats">
+          <div class="stat"><b>Premium Formula</b><small>Profesyonel kullanım</small></div>
+          <div class="stat"><b>Hızlı Etki</b><small>Günlük rutinlere uygun</small></div>
+          <div class="stat"><b>Kalite Odaklı</b><small>Güven veren üretim</small></div>
         </div>
       </div>
 
-      <div class="hero__card">
-        <h3>Öne Çıkanlar</h3>
-        <ul>
-          <li><strong>Koruma:</strong> Sinek & haşerelere karşı destek</li>
-          <li><strong>Bakım:</strong> Tırnak nem dengesine yardımcı</li>
-          <li><strong>Kolay tarama:</strong> Yele & kuyruk dolaşıklığını azaltır</li>
-        </ul>
-
-        <div class="hero__mini">
-          <div class="miniCard">
-            <div class="miniCard__title">Hızlı Sipariş</div>
-            <div class="miniCard__text">WhatsApp üzerinden ulaş</div>
+      <div class="hero-side">
+        <div class="side-card">
+          <div class="side-icon">🐎</div>
+          <div>
+            <h3>Hoof Care</h3>
+            <p>Hoof balm ile besleyici bakım ve koruma.</p>
           </div>
-          <div class="miniCard">
-            <div class="miniCard__title">Destek</div>
-            <div class="miniCard__text">Kullanım önerileri</div>
+        </div>
+        <div class="side-card">
+          <div class="side-icon">🧴</div>
+          <div>
+            <h3>Tail & Mane</h3>
+            <p>Tarama kolaylığı, parlaklık ve nem desteği.</p>
+          </div>
+        </div>
+        <div class="side-card">
+          <div class="side-icon">🛡️</div>
+          <div>
+            <h3>Fly & Pest</h3>
+            <p>Ahır ve dış ortam için koruyucu sprey çözümleri.</p>
           </div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- About -->
-  <section id="hakkimizda" class="section">
+  <!-- Categories -->
+  <section id="categories">
     <div class="container">
-      <div class="section__head">
-        <h2>Hakkımızda</h2>
-        <p>
-          AGUSFLY, at bakım rutininizi daha pratik hale getirmek için
-          geliştirilmiş ürünler sunar.
-        </p>
+      <div class="section-head">
+        <h2>Kategoriler</h2>
+        <div class="hint">Ürün gruplarını hızlıca keşfet</div>
       </div>
 
-      <div class="grid3">
-        <div class="card">
-          <h3>Kalite</h3>
-          <p>Seçili içerikler ve güvenilir üretim yaklaşımı.</p>
-        </div>
-        <div class="card">
-          <h3>Pratik Kullanım</h3>
-          <p>Günlük kullanım için kolay uygulama.</p>
-        </div>
-        <div class="card">
-          <h3>Modern Deneyim</h3>
-          <p>Temiz tasarım, net ürün sunumu, hızlı erişim.</p>
-        </div>
+      <div class="grid-4">
+        <a class="cat" href="#">
+          <span class="tag">Grooming</span>
+          <h3>Tail & Mane Care</h3>
+          <p>Nem, parlaklık ve tarama kolaylığı.</p>
+        </a>
+        <a class="cat" href="#">
+          <span class="tag">Care</span>
+          <h3>Hoof Care</h3>
+          <p>Besleyici balm & koruyucu bakım.</p>
+        </a>
+        <a class="cat" href="#">
+          <span class="tag">Protect</span>
+          <h3>Fly & Pest Control</h3>
+          <p>Sinek ve haşere karşı koruma.</p>
+        </a>
+        <a class="cat" href="#">
+          <span class="tag">Pro</span>
+          <h3>Stable Essentials</h3>
+          <p>Profesyonel ahır rutinine uygun.</p>
+        </a>
       </div>
     </div>
   </section>
 
   <!-- Products -->
-  <section id="urunler" class="section section--alt">
+  <section id="products">
     <div class="container">
-      <div class="section__head">
-        <h2>Ürünler</h2>
-        <p>Ürün detayına tıklayıp kullanım bilgisini görebilirsin.</p>
+      <div class="section-head">
+        <h2>Öne Çıkan Ürünler</h2>
+        <div class="hint">Görselleri kendi ürün fotoğraflarınla değiştir</div>
       </div>
 
-      <div class="products">
+      <div class="grid-3">
+        <!-- 1 -->
         <article class="product">
-          <div class="product__top">
-            <div class="product__badge">Koruma</div>
-            <div class="product__price">₺ —</div>
+          <div class="promo">Best Seller</div>
+          <div class="p-img">
+            <!-- Buraya kendi görsel yolunu koy: images/tail-spray.jpg -->
+            <img src="42C83A4C-41AC-4EBF-98EB-A54ECC736AFE.jpeg" alt="Agusfly Tail Spray">
           </div>
-          <h3>Horse Fly Spray</h3>
-          <p>Sinek ve haşerelere karşı etkili koruma desteği.</p>
-          <div class="product__actions">
-            <button class="btn btn--small" data-product="Horse Fly Spray">Detay</button>
-            <a class="btn btn--small btn--ghost" href="#iletisim">İletişim</a>
+          <div class="p-body">
+            <h3 class="p-title">Tail Spray</h3>
+            <p class="p-meta">Hydration Treatment • Professional Care</p>
+            <div class="p-row">
+              <span class="pill">700 ml</span>
+              <a class="link" href="#">Detay →</a>
+            </div>
           </div>
         </article>
 
+        <!-- 2 -->
         <article class="product">
-          <div class="product__top">
-            <div class="product__badge">Bakım</div>
-            <div class="product__price">₺ —</div>
+          <div class="p-img">
+            <img src="7EF3D4CD-CB44-44EB-A887-66F66AF9EE25.jpeg" alt="Agusfly Hoof Balm">
           </div>
-          <h3>Horse Hoof Balm</h3>
-          <p>Tırnak bakımı için besleyici ve koruyucu balm.</p>
-          <div class="product__actions">
-            <button class="btn btn--small" data-product="Horse Hoof Balm">Detay</button>
-            <a class="btn btn--small btn--ghost" href="#iletisim">İletişim</a>
+          <div class="p-body">
+            <h3 class="p-title">Hoof Balm</h3>
+            <p class="p-meta">Deep Nourishment • Professional Hoof Care</p>
+            <div class="p-row">
+              <span class="pill">Jar</span>
+              <a class="link" href="#">Detay →</a>
+            </div>
           </div>
         </article>
 
+        <!-- 3 -->
         <article class="product">
-          <div class="product__top">
-            <div class="product__badge">Yele/Kuyruk</div>
-            <div class="product__price">₺ —</div>
+          <div class="promo">New</div>
+          <div class="p-img">
+            <img src="369948A5-AEFF-4207-8CA1-638B477F5F0C.jpeg" alt="Agusfly Fly Spray">
           </div>
-          <h3>Horse Tail Spray</h3>
-          <p>Kuyruk ve yele bakımında taramayı kolaylaştırır.</p>
-          <div class="product__actions">
-            <button class="btn btn--small" data-product="Horse Tail Spray">Detay</button>
-            <a class="btn btn--small btn--ghost" href="#iletisim">İletişim</a>
+          <div class="p-body">
+            <h3 class="p-title">Fly Spray</h3>
+            <p class="p-meta">Pest Blocker • Stable & Outdoor</p>
+            <div class="p-row">
+              <span class="pill">Spray</span>
+              <a class="link" href="#">Detay →</a>
+            </div>
           </div>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
-  <section id="sss" class="section">
+  <!-- Banner -->
+  <section>
     <div class="container">
-      <div class="section__head">
-        <h2>SSS</h2>
-        <p>Sık sorulan soruların hızlı cevapları.</p>
-      </div>
-
-      <div class="faq">
-        <details class="faq__item">
-          <summary>Ürünler nasıl kullanılır?</summary>
-          <p>Ürün kartındaki “Detay” butonundan kullanım önerisini görebilirsin.</p>
-        </details>
-        <details class="faq__item">
-          <summary>Ne kadar sıklıkla uygulanmalı?</summary>
-          <p>İhtiyaca göre değişir. Fly spray için ortam koşullarına göre tekrar uygulanabilir.</p>
-        </details>
-        <details class="faq__item">
-          <summary>Sipariş için en hızlı yol?</summary>
-          <p>Sağ alttaki WhatsApp butonu ile direkt yazabilirsin.</p>
-        </details>
+      <div class="banner">
+        <div>
+          <h3>B2B / Distribütörlük</h3>
+          <p>Bayilik & toptan fiyat listesi için iletişime geçin.</p>
+        </div>
+        <a class="btn btn-primary" href="#contact">Teklif Al</a>
       </div>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section id="iletisim" class="section section--alt">
+  <!-- About -->
+  <section id="about">
     <div class="container">
-      <div class="section__head">
-        <h2>İletişim</h2>
-        <p>Formu doldur — mesajın ekranda “gönderildi” diye görünecek (demo). İstersen gerçek e-posta entegrasyonu da eklerim.</p>
+      <div class="section-head">
+        <h2>Agusfly Hakkında</h2>
+        <div class="hint">Güven, kalite, profesyonel bakım</div>
       </div>
 
-      <div class="contactGrid">
-        <form class="form" id="contactForm">
-          <div class="form__row">
-            <label>Ad Soyad</label>
-            <input required type="text" name="name" placeholder="Adınız Soyadınız" />
-          </div>
-
-          <div class="form__row">
-            <label>E-posta</label>
-            <input required type="email" name="email" placeholder="ornek@mail.com" />
-          </div>
-
-          <div class="form__row">
-            <label>Telefon (opsiyonel)</label>
-            <input type="tel" name="phone" placeholder="+90..." />
-          </div>
-
-          <div class="form__row">
-            <label>Mesaj</label>
-            <textarea required name="message" rows="5" placeholder="Mesajınız..."></textarea>
-          </div>
-
-          <button class="btn" type="submit">Gönder</button>
-          <p class="form__note" id="formNote"></p>
-        </form>
-
-        <div class="contactCard">
-          <h3>Hızlı İletişim</h3>
-          <p class="muted">WhatsApp ile hızlıca ulaş.</p>
-
-          <a class="btn" id="waLink" href="#" target="_blank" rel="noopener">WhatsApp’tan Yaz</a>
-
-          <div class="divider"></div>
-
-          <div class="muted small">
-            <div><strong>Çalışma Saatleri:</strong> 09:00–18:00</div>
-            <div><strong>Konum:</strong> Türkiye</div>
-          </div>
+      <div class="grid-2">
+        <div class="box">
+          <h3>Profesyonel Bakım Standartları</h3>
+          <p>
+            Agusfly ürünleri; günlük grooming, hoof bakım ve fly/pest kontrol rutinlerinde
+            pratik kullanım sağlayacak şekilde tasarlanır. Minimal, premium ambalaj diliyle
+            güven veren bir marka deneyimi sunar.
+          </p>
+        </div>
+        <div class="box">
+          <h3>Neden Agusfly?</h3>
+          <p>
+            • Premium görünüm + net ürün kategorileri<br/>
+            • Ahır ve dış ortam için pratik çözümler<br/>
+            • B2B katalog ve bayilik yapısına uygun web arayüzü
+          </p>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Newsletter -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2>İletişim</h2>
+        <div class="hint">Katalog / Bayilik / Sipariş</div>
+      </div>
+
+      <div class="newsletter">
+        <div>
+          <h3 style="margin:0 0 6px; font-size:18px;">Katalog & fiyat listesi iste</h3>
+          <div style="color:var(--muted); font-size:14px;">E-posta bırakın, sizinle iletişime geçelim.</div>
+          <div class="toast" id="toast">✅ Talebiniz alındı. Yakında dönüş yapacağız.</div>
+        </div>
+        <form id="leadForm">
+          <input type="email" id="email" placeholder="E-posta adresiniz" required>
+          <button class="btn btn-primary" type="submit">Gönder</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer__inner">
-      <p>© <span id="year"></span> AGUSFLY • Tüm hakları saklıdır.</p>
-      <a href="#anasayfa">Yukarı çık ↑</a>
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div>
+          <div class="logo" style="margin-bottom:8px;">
+            <span class="logo-mark"></span> AGUSFLY
+          </div>
+          <div style="color:var(--muted); line-height:1.6; font-size:14px;">
+            Professional Horse Care Products<br/>
+            Premium • Minimal • Pro Use
+          </div>
+        </div>
+
+        <div>
+          <h4>Ürünler</h4>
+          <a href="#">Tail & Mane</a>
+          <a href="#">Hoof Care</a>
+          <a href="#">Fly & Pest</a>
+          <a href="#">Stable Essentials</a>
+        </div>
+
+        <div>
+          <h4>Kurumsal</h4>
+          <a href="#">Hakkımızda</a>
+          <a href="#">Katalog</a>
+          <a href="#">Distribütörlük</a>
+          <a href="#">S.S.S</a>
+        </div>
+
+        <div>
+          <h4>İletişim</h4>
+          <a href="#">info@agusfly.com</a>
+          <a href="#">+90 (___) ___ __ __</a>
+          <a href="#">Instagram</a>
+          <a href="#">LinkedIn</a>
+        </div>
+      </div>
+
+      <div class="copy">© <span id="year"></span> Agusfly. Tüm hakları saklıdır.</div>
     </div>
   </footer>
 
-  <!-- WhatsApp Floating Button -->
-  <a class="waFloat" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp ile yaz">
-    💬
-  </a>
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-  <!-- Modal -->
-  <div class="modal" id="modal" aria-hidden="true">
-    <div class="modal__backdrop" id="modalBackdrop"></div>
-    <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <h3 id="modalTitle">Ürün Detayı</h3>
-      <p id="modalText"></p>
-      <button class="btn btn--ghost" id="modalClose">Kapat</button>
-    </div>
-  </div>
+    // Fake lead form submit
+    document.getElementById('leadForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      if(!email) return;
+      document.getElementById('toast').style.display = 'block';
+      this.reset();
+      setTimeout(()=> document.getElementById('toast').style.display='none', 3500);
+    });
 
-  <script src="script.js"></script>
+    // Mobile menu stub
+    document.getElementById('menuBtn')?.addEventListener('click', () => {
+      alert('Mobil menü için istersek açılır menü eklerim (drawer).');
+    });
+  </script>
+
 </body>
 </html>
