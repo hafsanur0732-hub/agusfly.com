@@ -1,94 +1,166 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AGUSFLY | Horse & Equipment</title>
-  <meta name="description" content="AGUSFLY: At bakım ve ekipman ürünleri. Modern, profesyonel ve güvenilir çözümler." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AGUSFLY | At Bakım Ürünleri</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="logo" href="#anasayfa">AGUSFLY</a>
 
-<header class="topbar">
-  <div class="container nav">
-    <div class="brand">
-      <div class="brand-mark"></div>
-      <div>
-        <h1>AGUSFLY</h1>
-        <small>Horse & Equipment</small>
-      </div>
+      <nav class="nav" id="nav">
+        <a href="#anasayfa">Ana Sayfa</a>
+        <a href="#hakkimizda">Hakkımızda</a>
+        <a href="#urunler">Ürünler</a>
+        <a href="#iletisim">İletişim</a>
+      </nav>
+
+      <button class="menuBtn" id="menuBtn" aria-label="Menüyü aç/kapat">
+        ☰
+      </button>
     </div>
+  </header>
 
-    <nav class="menu">
-      <a href="#">Anasayfa</a>
-      <a href="#urunler">Ürünler</a>
-      <a href="#neden">Neden Biz?</a>
-      <a href="#iletisim">İletişim</a>
-    </nav>
-  </div>
-</header>
-
-<main class="container">
-
-  <section class="hero">
-    <h2>At bakımında profesyonel çözümler</h2>
-    <p>
-      AGUSFLY; sinek kovucu sprey, tırnak bakım balmı ve kuyruk bakım ürünleriyle
-      günlük bakım rutininizi kolaylaştırır.
-    </p>
-    <a class="btn" href="#urunler">Ürünleri İncele</a>
-  </section>
-
-  <section id="urunler" class="section">
-    <h3>Ürünlerimiz</h3>
-
-    <div class="grid">
-      <div class="card">
-        <img src="images/product-fly-spray.png" alt="Horse Fly Spray">
-        <h4>Horse Fly Spray</h4>
-        <p>Sinek ve haşereye karşı etkili koruma.</p>
+  <!-- Hero -->
+  <section id="anasayfa" class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <h1>Profesyonel At Bakım Çözümleri</h1>
+        <p>
+          Kaliteli içerik, pratik kullanım ve modern tasarım.
+          Atınızın konforu için özel geliştirilmiş ürünler.
+        </p>
+        <div class="hero__cta">
+          <a class="btn" href="#urunler">Ürünleri Gör</a>
+          <a class="btn btn--ghost" href="#iletisim">Teklif Al</a>
+        </div>
       </div>
 
-      <div class="card">
-        <img src="images/product-hoof-balm.png" alt="Horse Hoof Balm">
-        <h4>Horse Hoof Balm</h4>
-        <p>Tırnak bakımında besleyici destek.</p>
-      </div>
-
-      <div class="card">
-        <img src="images/product-tail-spray.png" alt="Horse Tail Spray">
-        <h4>Horse Tail Spray</h4>
-        <p>Kuyruk ve yele için kolay tarama.</p>
+      <div class="hero__card">
+        <h3>Öne Çıkan</h3>
+        <ul>
+          <li>✅ Sinek & haşere koruması</li>
+          <li>✅ Tırnak bakım desteği</li>
+          <li>✅ Kuyruk & yele kolay tarama</li>
+        </ul>
       </div>
     </div>
   </section>
 
-  <section id="neden" class="section">
-    <h3>Neden AGUSFLY?</h3>
-    <ul>
-      <li>✔️ Güvenilir kalite</li>
-      <li>✔️ Pratik kullanım</li>
-      <li>✔️ Modern tasarım</li>
-      <li>✔️ Kurumsal yaklaşım</li>
-    </ul>
+  <!-- About -->
+  <section id="hakkimizda" class="section">
+    <div class="container">
+      <div class="section__head">
+        <h2>Hakkımızda</h2>
+        <p>
+          AGUSFLY, at bakımı için pratik ve etkili ürünler geliştirmeyi hedefler.
+          Amacımız; performans, güvenilirlik ve kullanıcı deneyimini bir araya getirmek.
+        </p>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>Kalite</h3>
+          <p>Seçili içerikler ve düzenli üretim standardı.</p>
+        </div>
+        <div class="card">
+          <h3>Pratik Kullanım</h3>
+          <p>Günlük bakım rutinine uyumlu formüller.</p>
+        </div>
+        <div class="card">
+          <h3>Modern Tasarım</h3>
+          <p>Temiz arayüz, hızlı erişim, mobil uyum.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <!-- Products -->
+  <section id="urunler" class="section section--alt">
+    <div class="container">
+      <div class="section__head">
+        <h2>Ürünler</h2>
+        <p>En çok tercih edilen bakım ürünlerimiz.</p>
+      </div>
+
+      <div class="products">
+        <article class="product">
+          <div class="product__badge">Koruma</div>
+          <h3>Horse Fly Spray</h3>
+          <p>Sinek ve haşerelere karşı etkili koruma sağlar.</p>
+          <button class="btn btn--small" data-product="Horse Fly Spray">Detay</button>
+        </article>
+
+        <article class="product">
+          <div class="product__badge">Bakım</div>
+          <h3>Horse Hoof Balm</h3>
+          <p>At tırnak bakımı için besleyici ve koruyucu balm.</p>
+          <button class="btn btn--small" data-product="Horse Hoof Balm">Detay</button>
+        </article>
+
+        <article class="product">
+          <div class="product__badge">Yele/Kuyruk</div>
+          <h3>Horse Tail Spray</h3>
+          <p>Kuyruk ve yele bakımında taramayı kolaylaştırır.</p>
+          <button class="btn btn--small" data-product="Horse Tail Spray">Detay</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
   <section id="iletisim" class="section">
-    <h3>İletişim</h3>
-    <p>Teklif ve iş birlikleri için bize ulaşın.</p>
-    <p><b>E-posta:</b> info@agusfly.com</p>
+    <div class="container">
+      <div class="section__head">
+        <h2>İletişim</h2>
+        <p>Mesaj bırakın, en kısa sürede dönüş yapalım.</p>
+      </div>
+
+      <form class="form" id="contactForm">
+        <div class="form__row">
+          <label>Ad Soyad</label>
+          <input required type="text" name="name" placeholder="Adınız Soyadınız" />
+        </div>
+
+        <div class="form__row">
+          <label>E-posta</label>
+          <input required type="email" name="email" placeholder="ornek@mail.com" />
+        </div>
+
+        <div class="form__row">
+          <label>Mesaj</label>
+          <textarea required name="message" rows="5" placeholder="Mesajınız..."></textarea>
+        </div>
+
+        <button class="btn" type="submit">Gönder</button>
+        <p class="form__note" id="formNote"></p>
+      </form>
+    </div>
   </section>
 
-</main>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> AGUSFLY • Tüm hakları saklıdır.</p>
+      <a href="#anasayfa">Yukarı çık ↑</a>
+    </div>
+  </footer>
 
-<footer class="footer">
-  <p>© <span id="y"></span> AGUSFLY — Horse & Equipment</p>
-</footer>
+  <!-- Modal -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__backdrop" id="modalBackdrop"></div>
+    <div class="modal__content" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h3 id="modalTitle">Ürün Detayı</h3>
+      <p id="modalText"></p>
+      <button class="btn btn--ghost" id="modalClose">Kapat</button>
+    </div>
+  </div>
 
-<script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
-<script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>
